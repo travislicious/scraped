@@ -113,7 +113,7 @@ def extract_from_embed(url):
     data = client.get(embed_url, timeout=60.0)
     data = data.json()
 
-    if data and data["message"]:
+    if data and data["code"] == "400":
         return "Not Found"
     else:
         music_url, song_name, music_author = extract_sound(url)
